@@ -1,11 +1,29 @@
 import { Page, Header, Title, SubTitle, Section, StatBox } from "./ui-kit";
-
+import data from "./rio_data.json";
+import {
+  mapNationalities,
+  goldMedalWinners,
+  bronzeMedalWinners,
+  silverMedalWinners
+} from "./utils";
 function App() {
   const stats = [
-    { statName: "Nationalities", value: 24 },
-    { statName: "Gold medal winners", value: 78 },
-    { statName: "Silver medal Winners", value: 30 }
+    {
+      statName: "Nationalities",
+      value: mapNationalities(data).nationalities.length
+    },
+    { statName: "Gold medal winners", value: goldMedalWinners(data).length },
+    {
+      statName: "Silver medal Winners",
+      value: silverMedalWinners(data).length
+    },
+    {
+      statName: "Bronze medal Winners",
+      value: bronzeMedalWinners(data).length
+    },
+    { statName: "Total Number of Participants", value: data.length }
   ];
+  console.log(goldMedalWinners(data));
   return (
     <Page>
       <Header theme="light">
@@ -21,8 +39,55 @@ function App() {
       <Section>
         <StatBox title={`Statistics`} stats={stats} />
       </Section>
+      <Section duo>
+        <div style={styles.etiquettes}>
+          <div style={styles.row}>
+            <div style={styles.record}>Names</div>
+            <div style={styles.record}>Nationality</div>
+            <div style={styles.record}>Gender</div>
+            <div style={styles.record}>Sport</div>
+          </div>
+        </div>
+        <div style={styles.urlBox}>
+          {data.map(record => {
+            return (
+              <div style={styles.row}>
+                <div style={styles.record}>{record.name}</div>
+                <div style={styles.record}>{record.nationality}</div>
+                <div style={styles.record}>{record.sex}</div>
+                <div style={styles.record}>{record.sport}</div>
+              </div>
+            );
+          })}
+        </div>
+      </Section>
     </Page>
   );
 }
-
+const styles = {
+  etiquettes: { paddingLeft: "20px", marginLeft: "20px" },
+  row: {
+    display: "flex",
+    justifyContent: "space-evenly",
+    border: "solid 1px #2F856E",
+    padding: 10
+  },
+  record: {
+    width: "100%",
+    border: "solid 1px red",
+    justifyContent: "space-evenly"
+  },
+  urlBox: {
+    display: "flex",
+    height: "fit-content",
+    maxHeight: "30vh",
+    //width: "100%",
+    overflowY: "scroll",
+    border: "solid 1px #2F856E",
+    borderRadius: "4px",
+    padding: "20px",
+    margin: "20px",
+    flexDirection: "column"
+  }
+};
 export default App;
