@@ -1,5 +1,7 @@
 import { Page, Header, Title, SubTitle, Section, StatBox } from "./ui-kit";
 import data from "./rio_data.json";
+import DonutChart from "react-donut-chart";
+
 import {
   mapNationalities,
   goldMedalWinners,
@@ -38,6 +40,32 @@ function App() {
 
       <Section>
         <StatBox title={`Statistics`} stats={stats} />
+        <div
+          style={{
+            border: "solid 2px grey",
+            height: "fit-content",
+            width: "fit-content",
+            marginTop: 10
+          }}
+        >
+          <DonutChart
+            height={270}
+            width={280}
+            legend={false}
+            innerRadius={0.7}
+            data={[
+              {
+                label: "Female",
+                value: 25
+              },
+              {
+                label: "Male",
+                value: 75
+                //isEmpty: true
+              }
+            ]}
+          />
+        </div>
       </Section>
       <Section duo>
         <div style={styles.etiquettes}>
