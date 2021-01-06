@@ -9,7 +9,7 @@ function App() {
   return (
     <Page>
       <Header theme="light">
-        <Title text={`Rio Data`} />
+        <Title text={`Rio Data`} bold={false} large divider />
         <SubTitle
           text={`This app gets insights from a dataset of the 2016 Olympic Games in Rio
         de Janeiro.`}

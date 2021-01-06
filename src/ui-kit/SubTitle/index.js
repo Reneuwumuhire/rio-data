@@ -3,7 +3,10 @@ import "./style.css";
 
 const SubTitle = ({ text }) => {
   const styles = {
-    text: {}
+    text: {
+      fontSize: 20,
+      marginBottom: 5
+    }
   };
   return <div style={styles.text}>{text}</div>;
 };
