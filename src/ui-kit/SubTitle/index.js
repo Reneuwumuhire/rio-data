@@ -1,14 +1,17 @@
 import React from "react";
 import "./style.css";
 
-const SubTitle = ({ text }) => {
+const SubTitle = ({ text, subText }) => {
   const styles = {
-    text: {
-      fontSize: 20,
-      marginBottom: 5
-    }
+    text: { color: "white", fontSize: 20, marginBottom: 5 },
+    subText: { color: "white", fontSize: 15, marginBottom: 5 }
   };
-  return <div style={styles.text}>{text}</div>;
+  return (
+    <div>
+      <div style={styles.text}>{text}</div>
+      <div style={styles.subText}>{subText}</div>
+    </div>
+  );
 };
 
 export default SubTitle;

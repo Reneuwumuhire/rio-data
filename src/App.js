@@ -13,7 +13,7 @@ function App() {
         <SubTitle
           text={`This app gets insights from a dataset of the 2016 Olympic Games in Rio
         de Janeiro.`}
-          subText={`It listed every sport, every athlete, every event,
+          subText={`Listed below are every sport, every athlete, every event,
         and the winners of every gold, silver, and bronze medal.`}
         />
       </Header>

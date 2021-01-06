@@ -6,7 +6,7 @@ const Page = ({ theme, ...children }) => {
     Page: {
       display: "flex",
       flexDirection: "column",
-      backgroundColor: "white" || "#282c34",
+      backgroundColor: "#CDE7DB" || "#282c34",
       minHeight: "100vh",
       minWidth: "100vw"
     }

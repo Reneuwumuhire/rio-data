@@ -6,8 +6,11 @@ const Section = ({ theme, ...children }) => {
     Page: {
       display: "flex",
       flex: 1,
-      minWidth: "100vw",
-      backgroundColor: theme === "light" ? "lightGrey" : "#648c11"
+      margin: 20,
+      padding: 10,
+      marginTop: 0,
+      backgroundColor: theme === "light" ? "lightGrey" : "#8ABBAE",
+      borderRadius: 6
     }
   };
   return <div style={styles.Page} {...children} />;
