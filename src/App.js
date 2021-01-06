@@ -65,28 +65,34 @@ function App() {
   );
 }
 const styles = {
-  etiquettes: { paddingLeft: "20px", marginLeft: "20px" },
+  etiquettes: {
+    marginLeft: 20,
+    marginRight: 20,
+    paddingLeft: 20,
+    marginTop: 20,
+    paddingRight: 37,
+    border: "solid 1px #2F856E"
+  },
   row: {
     display: "flex",
     justifyContent: "space-evenly",
-    border: "solid 1px #2F856E",
+    //border: "solid 1px #2F856E",
     padding: 10
   },
   record: {
     width: "100%",
-    border: "solid 1px red",
+    //border: "solid 1px red",
     justifyContent: "space-evenly"
   },
   urlBox: {
     display: "flex",
     height: "fit-content",
     maxHeight: "30vh",
-    //width: "100%",
     overflowY: "scroll",
     border: "solid 1px #2F856E",
     borderRadius: "4px",
-    padding: "20px",
-    margin: "20px",
+    padding: 20,
+    margin: 20,
     flexDirection: "column"
   }
 };
