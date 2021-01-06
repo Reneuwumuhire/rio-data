@@ -1,36 +1,28 @@
-import { Container, Header, Title, SubTitle } from "./ui-kit";
+import { Page, Header, Title, SubTitle, Section, StatBox } from "./ui-kit";
 
 function App() {
+  const stats = [
+    { statName: "Nationalities", value: 24 },
+    { statName: "Gold medal winners", value: 78 },
+    { statName: "Silver medal Winners", value: 30 }
+  ];
   return (
-    <Container>
+    <Page>
       <Header theme="light">
         <Title text={`Rio Data`} />
         <SubTitle
-          text={`This app analyses, and get insights from the 2016 Olympic Games in Rio
-        de Janeiro data. It listed every sport, every athlete, every event,
+          text={`This app gets insights from a dataset of the 2016 Olympic Games in Rio
+        de Janeiro.`}
+          subText={`It listed every sport, every athlete, every event,
         and the winners of every gold, silver, and bronze medal.`}
         />
       </Header>
 
-      <div style={styles.section}>
-        <div>Statistics</div>
-        <div>Nationalities: 34</div>
-        <div>Gold medal winners: 12</div>
-        <div>Silver medal Winners: 14</div>
-      </div>
-    </Container>
+      <Section>
+        <StatBox title={`Statistics`} stats={stats} />
+      </Section>
+    </Page>
   );
 }
 
-const styles = {
-  container: {
-    display: "flex",
-    backgroundColor: "white" || "#282c34",
-    minHeight: "100vh",
-    minWidth: "100vw"
-  },
-  header: {
-    backgroundColor: "lightGrey" || "#282c34"
-  }
-};
 export default App;
