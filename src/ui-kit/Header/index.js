@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+import "./style.css";
 
 const Header = ({ theme, ...children }) => {
   const styles = {
@@ -7,7 +7,7 @@ const Header = ({ theme, ...children }) => {
       backgroundColor: theme === "light" ? "lightGrey" : "#282c34"
     }
   };
-  return <div style={styles.container}>{...children}</div>;
+  return <div style={styles.container} {...children} />;
 };
 
 export default Header;

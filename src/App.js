@@ -1,14 +1,16 @@
+import { Container, Header, Title, SubTitle } from "./ui-kit";
+
 function App() {
   return (
-    <div style={styles.container}>
-      <div style={styles.header}>
-        <div style={styles.title}>Rio Data</div>
-        <div style={styles.paragraph}>
-          This app analyses, and get insights from the 2016 Olympic Games in Rio
-          de Janeiro data. It listed every sport, every athlete, every event,
-          and the winners of every gold, silver, and bronze medal.
-        </div>
-      </div>
+    <Container>
+      <Header theme="light">
+        <Title text={`Rio Data`} />
+        <SubTitle
+          text={`This app analyses, and get insights from the 2016 Olympic Games in Rio
+        de Janeiro data. It listed every sport, every athlete, every event,
+        and the winners of every gold, silver, and bronze medal.`}
+        />
+      </Header>
 
       <div style={styles.section}>
         <div>Statistics</div>
@@ -16,7 +18,7 @@ function App() {
         <div>Gold medal winners: 12</div>
         <div>Silver medal Winners: 14</div>
       </div>
-    </div>
+    </Container>
   );
 }
 
