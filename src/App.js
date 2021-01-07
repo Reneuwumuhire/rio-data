@@ -1,6 +1,13 @@
-import { Page, Header, Title, SubTitle, Section, StatBox } from "./ui-kit";
+import {
+  Page,
+  Header,
+  Title,
+  SubTitle,
+  Section,
+  StatBox,
+  DonutChart
+} from "./ui-kit";
 import data from "./rio_data.json";
-import DonutChart from "react-donut-chart";
 
 import {
   mapNationalities,
@@ -38,56 +45,20 @@ function App() {
         />
       </Header>
 
-      <Section>
+      <Section spaced>
         <StatBox title={`Statistics`} stats={stats} />
-        <div
-          style={{
-            border: "solid 2px grey",
-            height: "fit-content",
-            width: "fit-content",
-            marginTop: 10
-          }}
-        >
-          <DonutChart
-            height={270}
-            width={280}
-            legend={false}
-            innerRadius={0.7}
-            data={[
-              {
-                label: "Female",
-                value: 25
-              },
-              {
-                label: "Male",
-                value: 75
-                //isEmpty: true
-              }
-            ]}
-          />
-        </div>
-      </Section>
-      <Section duo>
-        <div style={styles.etiquettes}>
-          <div style={styles.row}>
-            <div style={styles.record}>Names</div>
-            <div style={styles.record}>Nationality</div>
-            <div style={styles.record}>Gender</div>
-            <div style={styles.record}>Sport</div>
-          </div>
-        </div>
-        <div style={styles.urlBox}>
-          {data.map(record => {
-            return (
-              <div style={styles.row}>
-                <div style={styles.record}>{record.name}</div>
-                <div style={styles.record}>{record.nationality}</div>
-                <div style={styles.record}>{record.sex}</div>
-                <div style={styles.record}>{record.sport}</div>
-              </div>
-            );
-          })}
-        </div>
+        <DonutChart
+          data={[
+            {
+              label: "Female",
+              value: 25
+            },
+            {
+              label: "Male",
+              value: 75
+            }
+          ]}
+        />
       </Section>
     </Page>
   );
