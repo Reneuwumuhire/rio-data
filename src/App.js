@@ -13,7 +13,8 @@ import {
   mapNationalities,
   goldMedalWinners,
   bronzeMedalWinners,
-  silverMedalWinners
+  silverMedalWinners,
+  genderStats
 } from "./utils";
 
 const App = () => {
@@ -31,18 +32,7 @@ const App = () => {
 
       <Section spaced>
         <StatBox title={`Statistics`} stats={stats} />
-        <DonutChart
-          data={[
-            {
-              label: "Female",
-              value: 25
-            },
-            {
-              label: "Male",
-              value: 75
-            }
-          ]}
-        />
+        <DonutChart data={genderStats(data)} />
       </Section>
       <Section col>
         <Table
